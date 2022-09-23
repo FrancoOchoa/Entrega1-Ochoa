@@ -1,0 +1,29 @@
+{% extends 'AppTenis/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">RESULTADOS DE LA BUSQUEDA</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<h1>BUSQUEDA DE INTEGRANTES</h1>
+{% if integrantes %}
+
+<ul>
+    {% for integrante in integrantes %}
+     <strong>NOMBRE</strong>   <li>{{integrante.nombre}}</li>
+     <strong>APELLIDO</strong>   <li>{{integrante.apellido}}</li>
+     <strong>EDAD</strong>   <li>{{integrante.edad}}</li>
+     <strong>EMAIL</strong>   <li>{{integrante.email}}</li>
+     <strong>GENERO</strong>   <li>{{integrante.genero}}</li>
+        <br>
+    {% endfor %}    
+</ul>
+
+{% else %}
+<p>NO SE ENCONTRARON INTEGRANTES</p>
+
+{% endif %}
+
+{% endblock %}
